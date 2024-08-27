@@ -31,9 +31,16 @@ public class MessageHandler : VisualEntity
         canvas.DrawText(_message, Transform.Position.X, Transform.Position.Y, _font, skPaint);
     }
 
+    /// <summary>
+    /// Sends a message to the message bar on the screen for a set amount of time and color.
+    /// </summary>
+    /// <param name="message"></param>
+    /// <param name="seconds"></param>
+    /// <param name="newColor"></param>
     public static void SendMessage(string message, double seconds = 3f, SKColor newColor = default)
     {
-        if (newColor != default) _currentColor = newColor;
+        _currentColor = newColor != default ? newColor : _defaultColor;
+        
         _message = message;
         _isVisible = true;
 
