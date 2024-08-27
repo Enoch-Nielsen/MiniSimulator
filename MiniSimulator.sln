@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template", "Template\Template.csproj", "{BA3F7E1A-87C3-4D25-BF84-FC77AF8C6024}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniTween", "MiniTween\MiniTween.csproj", "{371F8FD9-F760-4B48-A4E1-24BB7198BA7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibMath", "LibMath\LibMath.csproj", "{1AF2AD4E-590F-45FA-A952-C13A1E06BE20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA3F7E1A-87C3-4D25-BF84-FC77AF8C6024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA3F7E1A-87C3-4D25-BF84-FC77AF8C6024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA3F7E1A-87C3-4D25-BF84-FC77AF8C6024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA3F7E1A-87C3-4D25-BF84-FC77AF8C6024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{371F8FD9-F760-4B48-A4E1-24BB7198BA7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{371F8FD9-F760-4B48-A4E1-24BB7198BA7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{371F8FD9-F760-4B48-A4E1-24BB7198BA7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{371F8FD9-F760-4B48-A4E1-24BB7198BA7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AF2AD4E-590F-45FA-A952-C13A1E06BE20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AF2AD4E-590F-45FA-A952-C13A1E06BE20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AF2AD4E-590F-45FA-A952-C13A1E06BE20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AF2AD4E-590F-45FA-A952-C13A1E06BE20}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
