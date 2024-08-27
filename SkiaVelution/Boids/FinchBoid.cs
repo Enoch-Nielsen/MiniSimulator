@@ -146,7 +146,6 @@ public class FinchBoid : VisualEntity
             Velocity.Y -= _finchBoidBehaviour.TurnFactor;
         }
         
-        // TODO HAWK BEHAVIOUR HERE.
         
         // Tweaks and final positioning.
         float velocityMagnitude = Velocity.Length;
