@@ -10,17 +10,17 @@ public abstract class Savable
     {
         if (!useEvents)
             return;
-        
+
         XmlManager.OnLoadSession += LoadFromXml;
         XmlManager.OnSaveSession += SaveToXml;
     }
-    
+
     public abstract void LoadFromXml(XDocument xml);
 
     public abstract void SaveToXml(XmlWriter xmlWriter);
 
     /// <summary>
-    /// Writes a single value of type T to an XmlWriter instance.
+    ///     Writes a single value of type T to an XmlWriter instance.
     /// </summary>
     /// <param name="xmlWriter"></param>
     /// <param name="value"></param>
@@ -36,7 +36,7 @@ public abstract class Savable
     protected XElement GetRoot(XDocument xml)
     {
         XElement? rootElement = xml.Element(GetType().Name);
-        
+
         if (rootElement == null)
             throw new Exception($"Root element {GetType().Name} not found in XML.");
 

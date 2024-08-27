@@ -12,7 +12,7 @@ public class ImGuiControlPanel
         ImGui.NewFrame();
         ImGui.StyleColorsDark();
     }
-    
+
     public void RenderGUI(double delta, ImGuiController controller)
     {
         controller.Update((float)delta);
@@ -26,7 +26,7 @@ public class ImGuiControlPanel
 
         XmlManager.Instance?.DrawImGui();
         ProgramSettings.Instance?.DrawImGui();
-        
+
         ImGui.End();
         ImGui.Render();
 

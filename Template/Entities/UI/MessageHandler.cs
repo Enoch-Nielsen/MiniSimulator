@@ -13,18 +13,20 @@ public class MessageHandler : VisualEntity
     private static SKColor _defaultColor = SKColors.Goldenrod;
     private static SKFont _font = new();
     private static double _alpha = 255.0;
-    
+
     public MessageHandler(Transform transform) : base(transform)
     {
         _font.Size = transform.Scale;
     }
 
-    public override void Update(double deltaTime) { }
+    public override void Update(double deltaTime)
+    {
+    }
 
     protected override void Draw(SKCanvas canvas, SKPaint skPaint)
     {
         if (_alpha == 0.0) return;
-        
+
         skPaint.Color = _currentColor.WithAlpha((byte)_alpha);
         canvas.DrawText(_message, Transform.Position.X, Transform.Position.Y, _font, skPaint);
     }
@@ -34,7 +36,7 @@ public class MessageHandler : VisualEntity
         if (newColor != default) _currentColor = newColor;
         _message = message;
         _isVisible = true;
-        
+
         _alpha = 255.0;
         Tween.TweenDouble(() => _alpha, d => { _alpha = d; }, 0.0, seconds, Curves.TweenCurve.QUADRATIC_OUT);
     }

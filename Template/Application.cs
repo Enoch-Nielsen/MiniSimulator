@@ -5,7 +5,7 @@ namespace SkiaTemplate;
 public static class Application
 {
     public static readonly string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
-    
+
     public static void Main()
     {
         WindowManager windowManager = new();

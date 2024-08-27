@@ -6,7 +6,6 @@ using Silk.NET.Windowing;
 using Silk.NET.Windowing.Glfw;
 using SkiaSharp;
 using SkiaTemplate.Entities.UI;
-using SkiaTemplate.Objects;
 
 namespace SkiaTemplate;
 
@@ -14,16 +13,16 @@ public class WindowManager
 {
     public const int WIDTH = 1200;
     public const int HEIGHT = 900;
-    
-    public static event Action<double>? OnUpdate;
-    public static event Action<SKCanvas, SKPaint>? OnDraw;
-
-    public static IWindow? ActiveWindow { get; private set; }
 
     private static ImGuiController? _imguiController;
 
     private GL _gl = null!; // Variable to avoid Crash.
-    
+
+    public static IWindow? ActiveWindow { get; private set; }
+
+    public static event Action<double>? OnUpdate;
+    public static event Action<SKCanvas, SKPaint>? OnDraw;
+
     public void StartWindow()
     {
         try
@@ -34,31 +33,33 @@ public class WindowManager
             windowOptions.Title = "Template";
             windowOptions.PreferredStencilBufferBits = 8;
             windowOptions.PreferredBitDepth = new Vector4D<int>(8, 8, 8, 8);
-            
+
             GlfwWindowing.Use();
-        
+
             IWindow? window = Window.Create(windowOptions);
             window.Initialize();
-            
-            using GRGlInterface grGlInterface = GRGlInterface.Create((name => window.GLContext!.TryGetProcAddress(name, out var addr) ? addr : (IntPtr) 0));
+
+            using GRGlInterface grGlInterface =
+                GRGlInterface.Create(name => window.GLContext!.TryGetProcAddress(name, out var addr) ? addr : 0);
             grGlInterface.Validate();
-            
+
             // OpenGL Context Creation
             using GRContext? grContext = GRContext.CreateGl(grGlInterface);
-            
-            GRBackendRenderTarget renderTarget = new GRBackendRenderTarget(WIDTH, HEIGHT, 
+
+            GRBackendRenderTarget renderTarget = new(WIDTH, HEIGHT,
                 0, 8, new GRGlFramebufferInfo(0, 0x8058)); // 0x8058 = GL_RGBA8`
-            
+
             // Initialize Skia.
-            using SKSurface surface = SKSurface.Create(grContext, renderTarget, GRSurfaceOrigin.BottomLeft, SKColorType.Rgba8888);
+            using SKSurface surface =
+                SKSurface.Create(grContext, renderTarget, GRSurfaceOrigin.BottomLeft, SKColorType.Rgba8888);
             using SKCanvas canvas = surface.Canvas;
-            
+
             // Initialize ImGUI and Input.
             IInputContext input = window.CreateInput();
-            
+
             foreach (IKeyboard key in input.Keyboards)
                 key.KeyDown += Input.KeyDown;
-            
+
             _imguiController = new ImGuiController(
                 _gl = window.CreateOpenGL(), // load OpenGL
                 window, // pass in our window
@@ -66,16 +67,16 @@ public class WindowManager
             );
 
             ImGuiControlPanel imGuiControlPanel = new();
-            
+
             // Run Window Functions.
             window.Update += deltaTime => OnUpdate?.Invoke(deltaTime);
-            
+
             window.Render += deltaTime =>
             {
                 Render(deltaTime, grContext, canvas);
                 imGuiControlPanel.RenderGUI(deltaTime, _imguiController);
             };
-            
+
             ActiveWindow = window;
             ActiveWindow.Run();
             ActiveWindow.Dispose();
@@ -86,17 +87,17 @@ public class WindowManager
             throw;
         }
     }
-    
+
     private void Render(double deltaTime, GRContext grContext, SKCanvas canvas)
     {
         grContext.ResetContext();
         canvas.Clear(SKColors.Black);
-        
+
         SKPaint skPaint = new();
         skPaint.Style = SKPaintStyle.StrokeAndFill;
-        
+
         OnDraw?.Invoke(canvas, skPaint);
-                
+
         canvas.Flush();
     }
 }

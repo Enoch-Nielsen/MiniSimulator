@@ -8,15 +8,14 @@ namespace SkiaTemplate.Entities.UI;
 public class FPSCounter : VisualEntity
 {
     private const int FRAME_COUNT = 60;
+    private SKColor _counterColor;
+    private int _fps;
 
     private List<double> _frames = [];
-    private int _fps = 0;
 
-    SKFont fpsFont = new();
-    private SKColor _counterColor;
+    private SKFont fpsFont = new();
 
     /// <summary>
-    /// 
     /// </summary>
     /// <param name="transform"></param>
     /// <param name="counterColor"></param>
@@ -29,9 +28,9 @@ public class FPSCounter : VisualEntity
     public override void Update(double deltaTime)
     {
         TryAddFrame(deltaTime);
-        
+
         if (_frames.Count > 0)
-            _fps = (int)(1.0/_frames.Average());
+            _fps = (int)(1.0 / _frames.Average());
     }
 
     protected override void Draw(SKCanvas canvas, SKPaint skPaint)
@@ -40,19 +39,19 @@ public class FPSCounter : VisualEntity
             return;
 
         skPaint.Color = _counterColor;
-        
+
         canvas.DrawText(_fps.ToString(), Transform.Position.X, Transform.Position.Y, fpsFont, skPaint);
     }
-    
+
     /// <summary>
-    /// Adds a frame to the fps counter
+    ///     Adds a frame to the fps counter
     /// </summary>
     /// <param name="deltaTime"></param>
     public void TryAddFrame(double deltaTime)
     {
         if (_frames.Count == FRAME_COUNT)
             _frames.RemoveAt(0);
-        
+
         _frames.Add(deltaTime);
     }
 }
