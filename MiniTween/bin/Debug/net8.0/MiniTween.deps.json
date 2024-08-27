@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "MiniTween/1.0.0": {
+        "dependencies": {
+          "LibMath": "1.0.0"
+        },
+        "runtime": {
+          "MiniTween.dll": {}
+        }
+      },
+      "LibMath/1.0.0": {
+        "runtime": {
+          "LibMath.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MiniTween/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibMath/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,11 @@
+D:\Documents\Development\C#\Skiavelution\LibMath\bin\Debug\net8.0\LibMath.deps.json
+D:\Documents\Development\C#\Skiavelution\LibMath\bin\Debug\net8.0\LibMath.dll
+D:\Documents\Development\C#\Skiavelution\LibMath\bin\Debug\net8.0\LibMath.pdb
+D:\Documents\Development\C#\Skiavelution\LibMath\obj\Debug\net8.0\LibMath.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Development\C#\Skiavelution\LibMath\obj\Debug\net8.0\LibMath.AssemblyInfoInputs.cache
+D:\Documents\Development\C#\Skiavelution\LibMath\obj\Debug\net8.0\LibMath.AssemblyInfo.cs
+D:\Documents\Development\C#\Skiavelution\LibMath\obj\Debug\net8.0\LibMath.csproj.CoreCompileInputs.cache
+D:\Documents\Development\C#\Skiavelution\LibMath\obj\Debug\net8.0\LibMath.dll
+D:\Documents\Development\C#\Skiavelution\LibMath\obj\Debug\net8.0\refint\LibMath.dll
+D:\Documents\Development\C#\Skiavelution\LibMath\obj\Debug\net8.0\LibMath.pdb
+D:\Documents\Development\C#\Skiavelution\LibMath\obj\Debug\net8.0\ref\LibMath.dll
