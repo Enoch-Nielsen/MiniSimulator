@@ -15,14 +15,11 @@ public class WindowManager
     public const int HEIGHT = 900;
 
     private static ImGuiController? _imguiController;
-
-    private GL _gl = null!; // Variable to avoid Crash.
-
     public static IWindow? ActiveWindow { get; private set; }
 
     public static event Action<double>? OnUpdate;
     public static event Action<SKCanvas, SKPaint>? OnDraw;
-
+    
     public void StartWindow()
     {
         try
@@ -61,7 +58,7 @@ public class WindowManager
                 key.KeyDown += Input.KeyDown;
 
             _imguiController = new ImGuiController(
-                _gl = window.CreateOpenGL(), // load OpenGL
+                window.CreateOpenGL(), // load OpenGL
                 window, // pass in our window
                 input // create an input context
             );
@@ -69,7 +66,7 @@ public class WindowManager
             ImGuiControlPanel imGuiControlPanel = new();
 
             // Run Window Functions.
-            window.Update += deltaTime => OnUpdate?.Invoke(deltaTime);
+            window.Update += deltaTime => OnUpdate?.Invoke(deltaTime > 0.5 ? 0.0 : deltaTime);
 
             window.Render += deltaTime =>
             {
@@ -90,14 +87,15 @@ public class WindowManager
 
     private void Render(double deltaTime, GRContext grContext, SKCanvas canvas)
     {
+        using SKPaint skPaint = new();
+        skPaint.IsAntialias = true;
+
         grContext.ResetContext();
         canvas.Clear(SKColors.Black);
-
-        SKPaint skPaint = new();
-        skPaint.Style = SKPaintStyle.StrokeAndFill;
-
+        
         OnDraw?.Invoke(canvas, skPaint);
-
+        
         canvas.Flush();
+        grContext.Flush();
     }
 }

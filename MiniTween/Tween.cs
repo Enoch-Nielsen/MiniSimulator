@@ -8,14 +8,6 @@ public static class Tween
 
     private static List<TweenInfo> _tweenValues = new();
 
-    private static Dictionary<Curves.TweenCurve, Func<double, double>> Functions = new()
-    {
-        { Curves.TweenCurve.LINEAR, Curves.LinearEase },
-        { Curves.TweenCurve.QUADRATIC_IN, Curves.QuadraticInEase },
-        { Curves.TweenCurve.QUADRATIC_OUT, Curves.QuadraticOutEase },
-        { Curves.TweenCurve.QUADRATIC_INOUT, Curves.QuadraticInOutEase }
-    };
-
     /// <summary>
     ///     Subscribes the UpdateValues method to the given action delegate.
     /// </summary>
@@ -27,7 +19,7 @@ public static class Tween
         bool overwrite = true)
     {
         VariableReference reference = new(getter, setter);
-
+    
         if (_tweenValues.Any(t => t.VariableReference!.Equals(reference)))
         {
             if (overwrite)
@@ -60,8 +52,8 @@ public static class Tween
 
             var dir = tweenInfo.TweenTarget - tweenInfo.OriginalValue < 0;
             if (Math.Abs(tweenInfo.TweenTarget - tweenInfo.TrueValue) < TWEEN_THRESHOLD
-                || (dir && tweenInfo.TrueValue < tweenInfo.TweenTarget) ||
-                (!dir && tweenInfo.TrueValue > tweenInfo.TweenTarget))
+                || (dir && tweenInfo.TrueValue < tweenInfo.TweenTarget) 
+                || (!dir && tweenInfo.TrueValue > tweenInfo.TweenTarget))
             {
                 tweenInfo.VariableReference?.Set(tweenInfo.TweenTarget);
                 deque.Add(tweenInfo);
@@ -72,7 +64,7 @@ public static class Tween
                 ? MathL.InverseLerp(tweenInfo.TweenTarget, tweenInfo.OriginalValue, tweenInfo.TrueValue)
                 : MathL.InverseLerp(tweenInfo.OriginalValue, tweenInfo.TweenTarget, tweenInfo.TrueValue);
 
-            var funcValue = Functions[tweenInfo.TweenCurve](inverse);
+            var funcValue = Curves.Functions[tweenInfo.TweenCurve](inverse);
             var interpolatedValue = dir
                 ? MathL.Lerp(tweenInfo.TweenTarget, tweenInfo.OriginalValue, funcValue)
                 : MathL.Lerp(tweenInfo.OriginalValue, tweenInfo.TweenTarget, funcValue);

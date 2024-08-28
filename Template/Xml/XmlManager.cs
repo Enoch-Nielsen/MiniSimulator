@@ -47,7 +47,7 @@ public class XmlManager : ImGuiDrawable
     /// <summary>
     ///     Saves the settings for the last session.
     /// </summary>
-    public static void SaveSession(string path = LAST_SESSION_PATH)
+    private static void SaveSession(string path = LAST_SESSION_PATH)
     {
         XmlWriterSettings writerSettings = new()
         {
@@ -66,18 +66,18 @@ public class XmlManager : ImGuiDrawable
         writer.Close();
 
         var mPath = path == LAST_SESSION_PATH ? Application.RunningPath : "";
-        MessageHandler.SendMessage($"Saved to {mPath}{path}", 2f);
+        MessageHandler.SendMessage($"Saved to {mPath}{path}");
     }
 
     /// <summary>
     ///     Loads the last session.
     /// </summary>
     /// <returns></returns>
-    public static void LoadSession(string path = LAST_SESSION_PATH)
+    private static void LoadSession(string path = LAST_SESSION_PATH)
     {
         OnLoadSession?.Invoke(XDocument.Load(path));
-
+        
         var mPath = path == LAST_SESSION_PATH ? Application.RunningPath : "";
-        MessageHandler.SendMessage($"Loaded {mPath}{path}", 2f);
+        MessageHandler.SendMessage($"Loaded {mPath}{path}");
     }
 }

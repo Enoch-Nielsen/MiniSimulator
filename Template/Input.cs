@@ -16,9 +16,6 @@ public class Input
             case Key.Escape:
                 WindowManager.ActiveWindow?.Close();
                 break;
-            case Key.S:
-                XmlManager.SaveSession();
-                break;
         }
     }
 }

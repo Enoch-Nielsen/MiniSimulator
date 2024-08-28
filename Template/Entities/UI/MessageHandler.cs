@@ -8,7 +8,6 @@ namespace SkiaTemplate.Entities.UI;
 public class MessageHandler : VisualEntity
 {
     private static string _message = "";
-    private static bool _isVisible;
     private static SKColor _currentColor = SKColors.Goldenrod;
     private static SKColor _defaultColor = SKColors.Goldenrod;
     private static SKFont _font = new();
@@ -42,9 +41,8 @@ public class MessageHandler : VisualEntity
         _currentColor = newColor != default ? newColor : _defaultColor;
         
         _message = message;
-        _isVisible = true;
 
         _alpha = 255.0;
-        Tween.TweenDouble(() => _alpha, d => { _alpha = d; }, 0.0, seconds, Curves.TweenCurve.QUADRATIC_OUT);
+        Tween.TweenDouble(() => _alpha, d => { _alpha = d; }, 0.0, seconds, Curves.TweenCurve.CUBIC_OUT);
     }
 }
