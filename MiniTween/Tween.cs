@@ -15,7 +15,7 @@ public static class Tween
     public static void Setup(Action<Action<double>> action) => action(UpdateValues);
 
     public static void TweenDouble(Func<double> getter, Action<double> setter,
-        double tweenTarget, double tweenTime, Curves.TweenCurve tweenCurve = Curves.TweenCurve.LINEAR,
+        double tweenTarget, double tweenTime, TweenCurve tweenCurve = TweenCurve.LINEAR,
         bool overwrite = true)
     {
         VariableReference reference = new(getter, setter);
@@ -83,7 +83,7 @@ public class TweenInfo
     public double InterpolatedValue;
     public double OriginalValue;
     public double TrueValue;
-    public Curves.TweenCurve TweenCurve;
+    public TweenCurve TweenCurve;
     public double TweenTarget;
     public double TweenTime;
     internal VariableReference? VariableReference;

@@ -2,43 +2,6 @@ namespace MiniTween;
 
 public static class Curves
 {
-    public enum TweenCurve
-    {
-        LINEAR,
-
-        QUADRATIC_IN,
-        QUADRATIC_OUT,
-        QUADRATIC_INOUT,
-
-        CUBIC_IN,
-        CUBIC_OUT,
-        CUBIC_INOUT,
-
-        SIN_IN,
-        SIN_OUT,
-        SIN_INOUT,
-
-        EXPONENTIAL_IN,
-        EXPONENTIAL_OUT,
-        EXPONENTIAL_INOUT,
-
-        CIRCULAR_IN,
-        CIRCULAR_OUT,
-        CIRCULAR_INOUT,
-
-        ELASTIC_IN,
-        ELASTIC_OUT,
-        ELASTIC_INOUT,
-
-        BACK_IN,
-        BACK_OUT,
-        BACK_INOUT,
-
-        BOUNCE_IN,
-        BOUNCE_OUT,
-        BOUNCE_INOUT
-    }
-
     internal static readonly Dictionary<TweenCurve, Func<double, double>> Functions = new()
     {
         { TweenCurve.LINEAR, Linear },

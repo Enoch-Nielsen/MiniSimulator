@@ -43,6 +43,6 @@ public class MessageHandler : VisualEntity
         _message = message;
 
         _alpha = 255.0;
-        Tween.TweenDouble(() => _alpha, d => { _alpha = d; }, 0.0, seconds, Curves.TweenCurve.CUBIC_OUT);
+        Tween.TweenDouble(() => _alpha, d => { _alpha = d; }, 0.0, seconds, TweenCurve.CUBIC_OUT);
     }
 }
