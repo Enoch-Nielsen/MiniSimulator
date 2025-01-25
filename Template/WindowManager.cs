@@ -3,7 +3,7 @@ using Silk.NET.Maths;
 using Silk.NET.OpenGL;
 using Silk.NET.OpenGL.Extensions.ImGui;
 using Silk.NET.Windowing;
-using Silk.NET.Windowing.Glfw;
+using Silk.NET.Windowing.Sdl;
 using SkiaSharp;
 using SkiaTemplate.Entities.UI;
 
@@ -30,9 +30,7 @@ public class WindowManager
             windowOptions.Title = "Template";
             windowOptions.PreferredStencilBufferBits = 8;
             windowOptions.PreferredBitDepth = new Vector4D<int>(8, 8, 8, 8);
-
-            GlfwWindowing.Use();
-
+            
             IWindow? window = Window.Create(windowOptions);
             window.Initialize();
 

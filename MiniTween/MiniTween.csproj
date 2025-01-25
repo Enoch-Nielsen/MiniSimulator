@@ -11,4 +11,9 @@
         <ProjectReference Include="..\LibMath\LibMath.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Silk.NET.Windowing.Glfw" Version="2.22.0" />
+      <PackageReference Include="SkiaSharp.NativeAssets.Linux" Version="3.116.1" />
+    </ItemGroup>
+
 </Project>
