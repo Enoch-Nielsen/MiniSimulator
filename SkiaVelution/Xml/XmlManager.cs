@@ -2,10 +2,10 @@ using System.Xml;
 using System.Xml.Linq;
 using ImGuiNET;
 using NativeFileDialogSharp;
-using SkiaTemplate.Entities.UI;
-using SkiaTemplate.Objects;
+using SkiaVelution.Entities.UI;
+using SkiaVelution.Objects;
 
-namespace SkiaTemplate.Xml;
+namespace SkiaVelution.Xml;
 
 public class XmlManager : ImGuiDrawable
 {

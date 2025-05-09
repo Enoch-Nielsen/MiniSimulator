@@ -1,10 +1,10 @@
 using Silk.NET.Maths;
 using SkiaSharp;
-using SkiaTemplate.Entities;
-using SkiaTemplate.Entities.UI;
-using SkiaTemplate.Lib;
+using SkiaVelution.Entities;
+using SkiaVelution.Entities.UI;
+using SkiaVelution.Lib;
 
-namespace SkiaTemplate.Definitions;
+namespace SkiaVelution.Definitions;
 
 public class EntityDefinitions
 {

@@ -1,11 +1,10 @@
-using System.Diagnostics;
 using System.Xml;
 using System.Xml.Linq;
 using ImGuiNET;
-using SkiaTemplate.Objects;
-using SkiaTemplate.Xml;
+using SkiaVelution.Objects;
+using SkiaVelution.Xml;
 
-namespace SkiaTemplate.Settings;
+namespace SkiaVelution.Settings;
 
 [Serializable]
 public class ProgramSettings : Savable, ImGuiDrawable

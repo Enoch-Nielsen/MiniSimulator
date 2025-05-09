@@ -1,10 +1,7 @@
-using Silk.NET.Maths;
-using SkiaSharp;
-using SkiaTemplate.Definitions;
-using SkiaTemplate.Entities.UI;
+using SkiaVelution.Definitions;
 using SkiaVelution.Entities.Boids;
 
-namespace SkiaTemplate;
+namespace SkiaVelution;
 
 public class Model
 {

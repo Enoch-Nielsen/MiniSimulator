@@ -1,9 +1,9 @@
 using ImGuiNET;
 using Silk.NET.OpenGL.Extensions.ImGui;
-using SkiaTemplate.Settings;
-using SkiaTemplate.Xml;
+using SkiaVelution.Settings;
+using SkiaVelution.Xml;
 
-namespace SkiaTemplate.Entities.UI;
+namespace SkiaVelution.Entities.UI;
 
 public class ImGuiControlPanel
 {

@@ -5,9 +5,9 @@ using Silk.NET.OpenGL.Extensions.ImGui;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Glfw;
 using SkiaSharp;
-using SkiaTemplate.Entities.UI;
+using SkiaVelution.Entities.UI;
 
-namespace SkiaTemplate;
+namespace SkiaVelution;
 
 public class WindowManager
 {

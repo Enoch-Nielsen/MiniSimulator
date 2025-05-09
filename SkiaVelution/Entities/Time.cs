@@ -1,7 +1,7 @@
-using SkiaTemplate.Lib;
-using SkiaTemplate.Objects;
+using SkiaVelution.Lib;
+using SkiaVelution.Objects;
 
-namespace SkiaTemplate.Entities;
+namespace SkiaVelution.Entities;
 
 public class Time : Entity
 {

@@ -1,9 +1,9 @@
 using SkiaSharp;
-using SkiaTemplate.Definitions;
-using SkiaTemplate.Lib;
-using SkiaTemplate.Objects;
+using SkiaVelution.Definitions;
+using SkiaVelution.Lib;
+using SkiaVelution.Objects;
 
-namespace SkiaTemplate.Entities.UI;
+namespace SkiaVelution.Entities.UI;
 
 public class FPSCounter : VisualEntity
 {

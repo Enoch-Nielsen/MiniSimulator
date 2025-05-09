@@ -1,7 +1,7 @@
 using SkiaSharp;
-using SkiaTemplate.Lib;
+using SkiaVelution.Lib;
 
-namespace SkiaTemplate.Objects;
+namespace SkiaVelution.Objects;
 
 public abstract class VisualEntity : Entity
 {

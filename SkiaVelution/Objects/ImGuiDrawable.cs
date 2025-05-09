@@ -1,4 +1,4 @@
-namespace SkiaTemplate.Objects;
+namespace SkiaVelution.Objects;
 
 public interface ImGuiDrawable
 {

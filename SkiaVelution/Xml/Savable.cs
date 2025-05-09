@@ -1,7 +1,7 @@
 using System.Xml;
 using System.Xml.Linq;
 
-namespace SkiaTemplate.Xml;
+namespace SkiaVelution.Xml;
 
 [Serializable]
 public abstract class Savable

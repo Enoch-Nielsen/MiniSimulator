@@ -1,6 +1,6 @@
-using SkiaTemplate.Lib;
+using SkiaVelution.Lib;
 
-namespace SkiaTemplate.Objects;
+namespace SkiaVelution.Objects;
 
 public abstract class Entity
 {

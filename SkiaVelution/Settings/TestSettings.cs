@@ -1,8 +1,8 @@
 using System.Xml;
 using System.Xml.Linq;
-using SkiaTemplate.Xml;
+using SkiaVelution.Xml;
 
-namespace SkiaTemplate.Settings;
+namespace SkiaVelution.Settings;
 
 [Serializable]
 public class TestSettings : Savable

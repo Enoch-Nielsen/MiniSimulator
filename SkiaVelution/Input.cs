@@ -1,7 +1,6 @@
 using Silk.NET.Input;
-using SkiaTemplate.Xml;
 
-namespace SkiaTemplate;
+namespace SkiaVelution;
 
 public class Input
 {

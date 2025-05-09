@@ -1,6 +1,6 @@
 using Silk.NET.Maths;
 
-namespace SkiaTemplate.Lib;
+namespace SkiaVelution.Lib;
 
 public class Transform
 {

@@ -1,9 +1,8 @@
 using Silk.NET.Maths;
 using SkiaSharp;
-using SkiaTemplate;
-using SkiaTemplate.Lib;
-using SkiaTemplate.Objects;
-using SkiaTemplate.Settings;
+using SkiaVelution.Lib;
+using SkiaVelution.Objects;
+using SkiaVelution.Settings;
 
 namespace SkiaVelution.Entities.Boids;
 

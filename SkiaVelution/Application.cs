@@ -1,6 +1,6 @@
 ﻿using MiniTween;
 
-namespace SkiaTemplate;
+namespace SkiaVelution;
 
 public static class Application
 {

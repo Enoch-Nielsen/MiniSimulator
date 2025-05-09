@@ -1,7 +1,7 @@
-using SkiaTemplate.Settings;
-using SkiaTemplate.Xml;
+using SkiaVelution.Settings;
+using SkiaVelution.Xml;
 
-namespace SkiaTemplate.Definitions;
+namespace SkiaVelution.Definitions;
 
 public class SettingsDefinitions
 {
