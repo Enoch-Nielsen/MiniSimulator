@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="NativeFileDialogSharp" Version="0.6.0-alpha" />
+      <PackageReference Include="Silk" Version="1.1.0" />
+      <PackageReference Include="Silk.NET.Core" Version="2.22.0" />
+      <PackageReference Include="Silk.NET.GLFW" Version="2.22.0" />
+      <PackageReference Include="Silk.NET.Input" Version="2.22.0" />
+      <PackageReference Include="Silk.NET.Input.Common" Version="2.22.0" />
+      <PackageReference Include="Silk.NET.OpenGL" Version="2.22.0" />
+      <PackageReference Include="Silk.NET.OpenGL.Extensions.ImGui" Version="2.22.0" />
+      <PackageReference Include="Silk.NET.Windowing" Version="2.22.0" />
+      <PackageReference Include="Silk.NET.Windowing.Common" Version="2.22.0" />
+      <PackageReference Include="SkiaSharp" Version="3.119.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MiniTween\MiniTween.csproj" />
+    </ItemGroup>
+
+</Project>

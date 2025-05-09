@@ -9,12 +9,10 @@ public class Input
 
     public static void KeyDown(IKeyboard keyboard, Key key, int keyCode)
     {
-        OnClose?.Invoke();
-
         switch (key)
         {
             case Key.Escape:
-                WindowManager.ActiveWindow?.Close();
+                OnClose?.Invoke();
                 break;
         }
     }

@@ -24,10 +24,10 @@ public class WindowManager
     {
         try
         {
-            // Initialize Window
+            // Initialize Window.
             WindowOptions windowOptions = WindowOptions.Default;
             windowOptions.Size = new Vector2D<int>(WIDTH, HEIGHT);
-            windowOptions.Title = "Template";
+            windowOptions.Title = "SortingVisualizer";
             windowOptions.PreferredStencilBufferBits = 8;
             windowOptions.PreferredBitDepth = new Vector4D<int>(8, 8, 8, 8);
 
@@ -75,6 +75,10 @@ public class WindowManager
             };
 
             ActiveWindow = window;
+            
+            // Subscribe Events.
+            Input.OnClose += ActiveWindow.Close;
+            
             ActiveWindow.Run();
             ActiveWindow.Dispose();
         }
